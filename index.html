@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Diwali Surprise for Nandini ❤️🪔</title>
+  
+  <!-- Google Fonts for luxurious festive typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Audio Elements (Web Audio Synthesizer + Melody Player) -->
+  <button id="audio-toggle-btn" class="audio-btn" aria-label="Toggle festive ambient sound">
+    <span class="audio-icon" id="audio-icon">✨</span>
+    <span class="audio-label" id="audio-label">Sound Off</span>
+  </button>
+
+  <!-- Interactive Background Canvas for Particles, Petals & Fireworks -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Ambient Light Orbs -->
+  <div class="ambient-glow glow-top-left"></div>
+  <div class="ambient-glow glow-bottom-right"></div>
+  <div class="ambient-glow glow-center"></div>
+
+  <!-- Progress Bar & Indicator -->
+  <header class="experience-header">
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div class="progress-dots" id="progress-dots">
+      <span class="dot active" data-step="1" title="Welcome"></span>
+      <span class="dot" data-step="2" title="Greeting"></span>
+      <span class="dot" data-step="3" title="Message"></span>
+      <span class="dot" data-step="4" title="Memories"></span>
+      <span class="dot" data-step="5" title="Letter"></span>
+      <span class="dot" data-step="6" title="Final Surprise"></span>
+      <span class="dot" data-step="7" title="Replay"></span>
+    </div>
+  </header>
+
+  <!-- Main Viewport Container -->
+  <main class="viewport-wrapper">
+
+    <!-- ==================== SCREEN 1: THE WELCOME EXPERIENCE ==================== -->
+    <section class="experience-screen active" id="screen-1" data-screen="1">
+      <div class="screen-card welcome-card">
+        <div class="diya-hero-container">
+          <div class="diya-aura"></div>
+          <div class="diya-svg-wrapper">
+            <svg class="diya-svg" viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
+              <!-- Glow Filters -->
+              <defs>
+                <filter id="flame-glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="8" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <linearGradient id="brassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffe27a"/>
+                  <stop offset="45%" stop-color="#df9a24"/>
+                  <stop offset="85%" stop-color="#8f4f06"/>
+                  <stop offset="100%" stop-color="#552c00"/>
+                </linearGradient>
+                <linearGradient id="innerOilGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#5c1d10"/>
+                  <stop offset="100%" stop-color="#2a0904"/>
+                </linearGradient>
+                <radialGradient id="flameGrad" cx="50%" cy="80%" r="70%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="25%" stop-color="#fff176"/>
+                  <stop offset="55%" stop-color="#ff9100"/>
+                  <stop offset="85%" stop-color="#ff3d00"/>
+                  <stop offset="100%" stop-color="rgba(213,0,0,0)"/>
+                </radialGradient>
+              </defs>
+              
+              <!-- Outer Flame Ambient Glow -->
+              <circle cx="100" cy="55" r="45" fill="rgba(255, 180, 50, 0.28)" class="flame-pulse-aura" />
+              
+              <!-- Flame Outer -->
+              <path class="flame-flicker-outer" filter="url(#flame-glow)" d="M100 15 C85 45 75 62 82 82 C88 98 112 98 118 82 C125 62 115 45 100 15 Z" fill="url(#flameGrad)"/>
+              <!-- Flame Core (bright white-hot) -->
+              <path class="flame-flicker-inner" d="M100 32 C93 50 88 62 92 76 C95 86 105 86 108 76 C112 62 107 50 100 32 Z" fill="#ffffff" opacity="0.9"/>
+              <!-- Wick -->
+              <path d="M100 78 Q99 88 100 93" stroke="#2c1a0e" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <!-- Diya Base / Clay Lamp -->
+              <ellipse cx="100" cy="100" rx="65" ry="16" fill="url(#brassGrad)"/>
+              <ellipse cx="100" cy="98" rx="55" ry="11" fill="url(#innerOilGrad)"/>
+              <path d="M35 100 C38 135 60 152 100 152 C140 152 162 135 165 100 C155 125 130 142 100 142 C70 142 45 125 35 100 Z" fill="url(#brassGrad)"/>
+              <!-- Base Stand -->
+              <ellipse cx="100" cy="152" rx="36" ry="7" fill="#df9a24"/>
+              <path d="M72 153 C76 163 124 163 128 153 Z" fill="#753e05"/>
+            </svg>
+          </div>
+          <div class="diya-sparkles">
+            <span>✨</span><span>✨</span><span>✨</span>
+          </div>
+        </div>
+
+        <p class="tagline-sub">A LITTLE LIGHT, A LOT OF LOVE</p>
+        
+        <h1 class="hero-title">
+          A Little Diwali<br>
+          <span class="gold-shimmer">Surprise for You</span>
+        </h1>
+        
+        <p class="hero-description">
+          Some lights are beautiful. Some people make life brighter. This one is for you.
+        </p>
+
+        <div class="screen-actions">
+          <button class="primary-btn glow-btn pulse-anim" id="btn-open-surprise" data-next="2">
+            <span>Open Your Surprise ✨</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SCREEN 2: PERSONAL GREETING ==================== -->
+    <section class="experience-screen" id="screen-2" data-screen="2">
+      <div class="screen-card festive-card greeting-card">
+        <div class="mandala-accent top-accent"></div>
+        
+        <div class="badge-pill">
+          <span>Shubh Deepavali ✨</span>
+        </div>
+
+        <div class="greeting-reveal-box">
+          <div class="floating-hearts-container">
+            <span class="floating-heart h1">💖</span>
+            <span class="floating-heart h2">✨</span>
+            <span class="floating-heart h3">❤️</span>
+            <span class="floating-heart h4">🪔</span>
+            <span class="floating-heart h5">💕</span>
+          </div>
+
+          <h2 class="greeting-title">
+            Happy Diwali,<br>
+            <span class="name-highlight">Nandini</span><br>
+            <span class="baby-highlight">My Baby ❤️🪔</span>
+          </h2>
+        </div>
+
+        <p class="greeting-subtext">
+          May the golden light of this auspicious night wrap your heart in the warmest glow, bringing you all the love and happiness in the universe.
+        </p>
+
+        <div class="screen-actions dual-actions">
+          <button class="secondary-btn" data-prev="1">
+            <span>← Back</span>
+          </button>
+          <button class="primary-btn glow-btn" data-next="3">
+            <span>Continue 💫</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SCREEN 3: A PERSONAL MESSAGE ==================== -->
+    <section class="experience-screen" id="screen-3" data-screen="3">
+      <div class="screen-card message-card">
+        <div class="decorative-diya-icon">🪔</div>
+        <h3 class="section-kicker">FROM MY HEART TO YOURS</h3>
+        
+        <div class="message-content-wrapper">
+          <div class="quote-mark">“</div>
+          <p class="romantic-paragraph p1">
+            On this beautiful festival of lights, I just want to remind you how special you are to me.
+          </p>
+          <p class="romantic-paragraph p2 highlight-gold">
+            May your life always be filled with happiness, love, peace and endless reasons to smile.
+          </p>
+          <p class="romantic-paragraph p3">
+            You deserve all the beautiful things this world has to offer.
+          </p>
+          <div class="quote-mark right-quote">”</div>
+        </div>
+
+        <div class="heart-divider">
+          <span class="line"></span>
+          <span class="heart-symbol">✦ 🪔 ✦</span>
+          <span class="line"></span>
+        </div>
+
+        <div class="screen-actions dual-actions">
+          <button class="secondary-btn" data-prev="2">
+            <span>← Back</span>
+          </button>
+          <button class="primary-btn glow-btn" data-next="4">
+            <span>Our Memories 📸</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SCREEN 4: OUR MEMORIES ==================== -->
+    <section class="experience-screen" id="screen-4" data-screen="4">
+      <div class="screen-card memories-card">
+        <div class="memories-header">
+          <span class="section-kicker">CHERISHED MOMENTS</span>
+          <h2 class="memories-title">Our Memories ❤️</h2>
+          <p class="memories-subtitle">Tap any picture to view it enlarged with love.</p>
+        </div>
+
+        <!-- 8 Photo Slots Grid (Populated with Original Photos) -->
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Photo Cards will be rendered and verified dynamically -->
+        </div>
+
+        <div class="screen-actions dual-actions">
+          <button class="secondary-btn" data-prev="3">
+            <span>← Back</span>
+          </button>
+          <button class="primary-btn glow-btn" data-next="5">
+            <span>A Letter For You 💌</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SCREEN 5: A LETTER FOR YOU ==================== -->
+    <section class="experience-screen" id="screen-5" data-screen="5">
+      <div class="screen-card letter-screen-card">
+        <div class="letter-envelope-header">
+          <span class="wax-seal">💌</span>
+          <span class="letter-kicker">WRITTEN WITH LOVE</span>
+        </div>
+
+        <div class="handwritten-letter-container" id="handwritten-letter">
+          <div class="letter-border-top"></div>
+          
+          <div class="letter-inner-content">
+            <h2 class="letter-salutation">Happy Diwali, my love! ❤️</h2>
+            
+            <p class="letter-body-p hindi-text">
+              Tumhari zindagi hamesha khushiyon, roshni aur pyaar se jagmagati rahe. Har diya tumhare chehre par ek nayi smile laaye, aur tumhare saare dreams poore hon.
+            </p>
+            
+            <p class="letter-body-p english-highlight">
+              You are one of the most beautiful parts of my life.
+            </p>
+            
+            <p class="letter-body-p hindi-closing">
+              Hamesha khush rehna, meri jaan. ❤️🪔
+            </p>
+
+            <div class="letter-signature">
+              <span class="sig-heart">Yours always,</span>
+              <span class="sig-name">Ritik ✨</span>
+            </div>
+          </div>
+
+          <div class="letter-border-bottom"></div>
+        </div>
+
+        <div class="screen-actions dual-actions">
+          <button class="secondary-btn" data-prev="4">
+            <span>← Back</span>
+          </button>
+          <button class="primary-btn glow-btn pulse-anim" data-next="6">
+            <span>The Final Surprise ✨</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SCREEN 6: THE FINAL SURPRISE ==================== -->
+    <section class="experience-screen" id="screen-6" data-screen="6">
+      <div class="screen-card final-card">
+        <div class="celebration-badge">
+          <span>✨ Infinite Love & Lights ✨</span>
+        </div>
+
+        <div class="final-fireworks-indicator">
+          <span class="sparkle-star s1">✨</span>
+          <span class="sparkle-star s2">💥</span>
+          <span class="sparkle-star s3">✨</span>
+        </div>
+
+        <h1 class="final-heading">
+          With Love, Always ❤️
+        </h1>
+
+        <p class="final-supporting-text">
+          “Every Diwali feels a little more special because you are a part of my life.”
+        </p>
+
+        <div class="final-sender-box">
+          <span class="sender-label">Forever & Always,</span>
+          <h3 class="sender-name">Ritik Raj Sah</h3>
+          <span class="sender-baby">— Your Baby ❤️</span>
+        </div>
+
+        <div class="final-diyas-row">
+          <span class="mini-diya">🪔</span>
+          <span class="mini-spark">✨</span>
+          <span class="mini-diya center-glow">🪔</span>
+          <span class="mini-spark">✨</span>
+          <span class="mini-diya">🪔</span>
+        </div>
+
+        <div class="screen-actions dual-actions">
+          <button class="secondary-btn" data-prev="5">
+            <span>← Back</span>
+          </button>
+          <button class="primary-btn glow-btn" data-next="7">
+            <span>Continue 💫</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SCREEN 7: REPLAY ==================== -->
+    <section class="experience-screen" id="screen-7" data-screen="7">
+      <div class="screen-card replay-card">
+        <div class="replay-diya-glow">
+          <span class="replay-symbol">🪔</span>
+        </div>
+
+        <h2 class="replay-title">May Our Bond Shine Forever</h2>
+        <p class="replay-text">
+          Thank you for making every day feel like a festival of lights, love, and laughter.
+        </p>
+
+        <div class="replay-action-wrapper">
+          <button class="primary-btn glow-btn replay-btn" id="btn-replay">
+            <span>Experience Again ❤️</span>
+          </button>
+        </div>
+
+        <p class="footer-love-note">
+          Crafted with endless love by Ritik for Nandini ❤️ Diwali 2026
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FULLSCREEN PHOTO LIGHTBOX MODAL ==================== -->
+  <div class="lightbox-modal" id="photo-lightbox" role="dialog" aria-modal="true" aria-label="Photo Preview">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close enlarged photo">✕</button>
+      
+      <div class="lightbox-image-container">
+        <img src="" alt="Enlarged Memory" id="lightbox-img" class="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+      </div>
+
+      <button class="lightbox-nav-btn prev-btn" id="lightbox-prev" aria-label="Previous photo">‹</button>
+      <button class="lightbox-nav-btn next-btn" id="lightbox-next" aria-label="Next photo">›</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
